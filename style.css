@@ -1,0 +1,23 @@
+body {
+  background-image: url(background.jpg);
+
+}
+
+.card {
+  border: solid;
+  border-color: red;
+}
+
+.boss-img {
+  width: 50vh;
+}
+
+.hero-card {
+  background-color: gray;
+}
+
+.boss-card {
+  background-image: url(background.jpg);
+  color: rgb(22, 238, 36);
+
+}
