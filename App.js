@@ -35,15 +35,33 @@ function attackBoss() {
 
   console.log('boss is being attacked')
   console.log('boss health', boss.health)
+  drawBossHealthBar()
   updateBossHealth()
 }
 
 function updateBossHealth() {
-  if (boss.health < 1) { }
+  if (boss.health < 1) {
+    drawBoss()
+    drawBossHealthBar()
+  }
 }
 
 //NOTE - Draw section for the boss/heroes/ and the bank
+function drawBoss() {
+  const bossElement = document.getElementById('boss-health')
+  bossElement.innerText = boss.health.toString()
+  const bossMaxHealth = bossElement.querySelector('MaxHealth')
 
+  const bossLevel = bossElement.querySelector('Level')
+  bossLevel.innerHTML = 'Level:' + boss.level.toString()
+
+
+}
+
+function drawBossHealthBar() {
+  const bossBarElement = document.getElementById('boss-health-bar')
+  bossBarElement.innerText = boss.health.toString()
+}
 
 //NOTE -happens when the page loading
 
