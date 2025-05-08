@@ -22,70 +22,29 @@ const boss = {
 
 
 
-
-//NOTE - Attacking the boss
-
+//NOTE - the logical aspect of the page.
 
 function attackBoss() {
   let totalDamage = 0
   heroes.forEach(hero => {
-    if (hero.health == 0)
-      return
-    totalDamage += hero.damage  //... Calculate total damage
-    console.log('attacking Fat-Head-Smurf')
+    if (hero.health == 0) return
+    totalDamage += hero.damage
   })
+
   boss.health -= totalDamage
 
-  if (boss.health < 1)  //... Reduce the boss health and update the boss's health on the page
-    boss.health = 0
-
+  console.log('boss is being attacked')
+  console.log('boss health', boss.health)
+  updateBossHealth()
 }
 
-//NOTE - Boss attacking back
-
-
-function bossAttack() {
-  heroes.forEach(hero => {
-    hero.health -= Math.floor(boss.damage * (boss.level * Math.random()))
-    if (hero.health < 1) {
-      hero.health = 0
-      //... Update the hero's health on the page
-
-    }
-  })
+function updateBossHealth() {
+  if (boss.health < 1) { }
 }
 
-
-//NOTE - Leveling up
-
-
-// function levelUpBoss() {
-//   if (boss.health <= 0) {
-//     //... Update the boss level and health
-//   }
-// }
+//NOTE - Draw section for the boss/heroes/ and the bank
 
 
-//NOTE - Getting paid
+//NOTE -happens when the page loading
 
-
-// let heroGold = 0
-// let bank = heroGold
-
-
-// function awardHeroes() {
-//   let gold = 0
-//   heroes.forEach(hero => {
-
-//   })
-// Increase the heroes gold, based on boss level, Update gold display on the page
-
-//NOTE - Heroes Dying
-
-function heroHealth() {
-  heroes.forEach(hero => {
-    hero.health -= 1
-    // console.log('hero health dropping')
-  })
-}
-
+// setInterval()
