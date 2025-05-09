@@ -46,7 +46,22 @@ function updateBossHealth() {
   }
 }
 
+let heroGold = 0
+let bank = heroGold;
+
+function awardHeroes() {
+  bank += boss.reward
+  drawBank() // Increase the heroes gold, based on boss level, Update gold display on the page
+}
+
+
+
 //NOTE - Draw section for the boss/heroes/ and the bank
+function drawBank() {
+  const bankElm = document.getElementById('reward')
+  const bankAmount = bankElm.querySelector('bank-amount')
+  bankAmount.innerHTML = 'Gold: ' + bank.toString()
+}
 function drawBoss() {
   const bossElement = document.getElementById('boss-health')
   bossElement.innerText = boss.health.toString()
